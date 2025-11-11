@@ -52,7 +52,7 @@ header { /* 10 % HEADER*/
     font-size: 15px;    
     width: 270px;
     height: 50px;
-    border: 3px solid black;
+    border: 3px solid white;
     border-radius: 10px;
 }
 
@@ -92,23 +92,47 @@ header { /* 10 % HEADER*/
     display: flex;
     justify-content: center;
     align-items: top;
-    background-color: black;
+    background-color: white;
+    border: 1px solid transparent;
 }
 
 .loginRegisterHolder{
     margin-top: 20px;
     display: flex;
-    height: 140px;
+    height: 270px;
     width: 200px;
-    background-color: black;
+    background-color: white;
     justify-content: center;
     align-items: center;
     border: 2px solid darkcyan;
     border-radius: 10px;
     box-shadow: 0px 10px 10px darkcyan;
+    padding: 30px;
+    flex-direction: column;
+    color: black;
 }
 
 .form-holder{
-    background-color: transparent;
+    padding: 4px;
+    border-radius: 5px;
+    margin: 15px;
 }
 
+.input_input{
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border: 3px grey solid;
+    border-radius: 10px;
+}
+
+.input_input_button{
+    color: white;
+    background-color: black;
+    padding: 10px;
+    border: 3px grey solid;
+    border-radius: 10px;
+}
+a{
+    color: black;
+}
