@@ -1,0 +1,46 @@
+html{
+    height: 100%;
+    width: 100%;
+    background: lightblue;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 500%;
+}
+
+#mainOne{
+    display:flex;
+    height: 20%;
+    width: 100%;
+
+    background-color: black;
+    flex-direction: column;
+}
+
+header {
+    height: 10%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color:aqua ;
+    display: flex;
+}
+
+.htitel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left:20px;
+}
+
+
+
+
+
