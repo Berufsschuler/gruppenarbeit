@@ -4,6 +4,8 @@ html{
     background: lightblue;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
+    color: white
 }
 
 body{
@@ -13,34 +15,100 @@ body{
     padding: 0;
     margin: 0;
     height: 500%;
+    background-color: white;
 }
 
-#mainOne{
+a {
+  cursor: pointer;
+}
+
+#mainOne{ 
     display:flex;
     height: 20%;
     width: 100%;
 
-    background-color: black;
+
     flex-direction: column;
 }
 
-header {
+header { /* 10 % HEADER*/
     height: 10%;
     width: 100%;
     margin: 0;
     padding: 0;
-    background-color:aqua ;
+    background-color:black;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Merriweather", serif;
 }
 
-.htitel{
+.hname{
+    margin-right: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left:20px;
+    font-size: 15px;    
+    width: 270px;
+    height: 50px;
+    border: 3px solid black;
+    border-radius: 10px;
 }
 
+.htitel{
+    font-size: 15px;
+    width: 420px;
+    text-align: center;
+}
 
+.hicon{
+    height: 50px;
+    width: 420px;
+    display: flex;
+    justify-content: end;
+}
+.hpicture{
+    background-image: url(./img/CookieBreh.png);
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+}
+.centerText{ /* 20 % Text Titel 'CLICKE the C.....*/
+    color: black;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    height: 15%;
+    font-size: 22px;
+    margin: 30px;
+    background-color: white
+}
 
+.loginRegister_container{/* 70 % LOGIN_REGISTER_FORM*/
+    height: 70%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    background-color: black;
+}
 
+.loginRegisterHolder{
+    margin-top: 20px;
+    display: flex;
+    height: 140px;
+    width: 200px;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid darkcyan;
+    border-radius: 10px;
+    box-shadow: 0px 10px 10px darkcyan;
+}
+
+.form-holder{
+    background-color: transparent;
+}
 
