@@ -116,6 +116,7 @@ header { /* 10 % HEADER*/
     padding: 4px;
     border-radius: 5px;
     margin: 15px;
+    color: white;
 }
 
 .input_input{
@@ -132,7 +133,12 @@ header { /* 10 % HEADER*/
     padding: 10px;
     border: 3px grey solid;
     border-radius: 10px;
+    cursor: pointer;
 }
+.input_input::placeholder{
+    color: rgba(255, 255, 255, 0.473);
+}
+
 a{
     color: black;
 }
