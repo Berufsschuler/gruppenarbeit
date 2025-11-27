@@ -201,6 +201,7 @@ footer {
   width: 100%;
   background-color: rgb(83, 83, 83);
   z-index: 1;
+  margin-top: auto;
 }
 
 .fname {
