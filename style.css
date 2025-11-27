@@ -84,7 +84,7 @@ header {
   width: 20px;
 }
 
-.centerText {
+.centerText, #winPricesTitle, #ClimbUpTheLadder, #tryOutTitle{
   /* 20 % Text Titel 'CLICKE the C.....*/
   color: black;
   display: flex;
@@ -104,7 +104,6 @@ header {
 .login_container {
   /* 70 % LOGIN_REGISTER_FORM*/
   height: 70%;
-  background-color: white;
   display: flex;
   justify-content: center;
   align-items: top;
@@ -118,7 +117,6 @@ header {
   display: flex;
   height: 270px;
   width: 200px;
-  background-color: white;
   justify-content: center;
   align-items: center;
   border: 2px solid rgb(62, 62, 62);
@@ -235,24 +233,24 @@ a:hover {
 
 #mainTwo {
   display: flex;
-  height: 22%;
+  height: 15%;
   width: 100%;
 
   flex-direction: column;
   background-color: transparent;
   z-index: 4;
   color: black;
-  display: flex;
   justify-content: top;
   align-items: center;
+  background-color: transparent;
 }
 
 #preview {
   background-color: transparent;
-  border: 1px solid white;
+  border: 3px solid rgb(0, 0, 0);
   border-radius: 15px 15px 0px 0px;
-  width: 900px;
-  height: 650px;
+  width: 890px;
+  height: 60%;
   justify-content: center;
   align-items: top;
   display: flex;
@@ -261,12 +259,220 @@ a:hover {
 
 #previewGIF {
   background-color: rgba(221, 236, 242, 0.559);
-  width: 900px;
-  height: 500px;
+  height: 100%;
   border-radius: 15px 15px 0px 0px;
 }
 #GIFinformation {
-  width: 900px;
-  height: 150px;
-  background-color: rgba(255, 255, 255, 0.473);
+  width: 890px;
+  height: 20%;
+  background-color: rgb(220, 220, 220, 0.99);
+  border: 3px solid black;
+  font-size: 20px;
+  font-weight: bold;
 }
+
+#mainThree {
+  display: flex;
+  height: 15%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  flex-direction: column;
+  z-index: 4;
+  justify-content: top;
+  align-items: center;
+}
+
+body {
+  background: #111;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.leaderboard-section {
+  width: 600px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.leaderboard-section h1 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.leaderboard-section p {
+  color: #cccccc;
+  margin-bottom: 30px;
+}
+
+.leaderboard {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.entry {
+  background: #1d1d1d;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.entry.highlight {
+  border: 2px solid gold;
+  background: #2a2a2a;
+}
+
+.rank {
+  font-weight: bold;
+  opacity: 0.7;
+}
+
+.name {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.points {
+  opacity: 0.8;
+}
+
+.rank-arrow {
+  color: gold;
+  font-size: 22px;
+  margin-left: 10px;
+  animation: arrowUp 1s infinite;
+}
+
+/* keyframes animation */
+@keyframes arrowUp {
+  0%   { transform: translateY(4px); opacity: 0.8; }
+  50%  { transform: translateY(-4px); opacity: 1; }
+  100% { transform: translateY(4px); opacity: 0.8; }
+}
+
+
+
+
+
+#mainFour {
+  display: flex;
+  height: 15%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  color: black;
+  flex-direction: column;
+  z-index: 4;
+  justify-content: top;
+  align-items: center;
+}
+
+#prices{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0;
+    padding: 0;
+    
+}
+#winPricesTitle, #ClimbUpTheLadder, #tryOutTitle {
+    font-size: 40px;
+    word-spacing: 10px;
+}
+
+#merch_01{
+    background-size: cover;
+    height: 500px;
+    width: 500px;
+    margin-bottom: 0px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+
+}
+#merch_04{
+    background-size: cover;
+    height: 400px;
+    width: 300px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+#eblem_01{
+    background-size: cover;
+    height: 300px;
+    width: 350px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    padding-bottom: 25px;
+}
+
+#merch_01_img{
+    background-image: url(./img/merch_1.png);
+    background-size: cover;
+    height: 400px;
+    width: 300px;
+    border: 3px solid black;
+}
+#merch_04_img{
+    background-image: url(./img/merch_4.png);
+    background-size: cover;
+    height: 180px;
+    width: 150px;
+    border: 3px solid black;
+}
+#eblem_01_img{
+    background-image: url(./img/eblem_1.png);
+    background-size: cover;
+    height: 130px;
+    width: 100px;
+    border: 3px solid black;
+}
+
+
+
+
+#mainFive {
+  display: flex;
+  height: 15%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.0);
+  color: black;
+  flex-direction: column;
+  z-index: 4;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@keyframes floatUpDown {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-15px); }
+  100% { transform: translateY(0); }
+}
+
+#tryCookie {
+  background-image: url(./img/cookie_1.png);
+  background-size: 300px 450px;
+  height: 300px;
+  width: 300px;
+  clip-path: circle(37% at 50% 50%);
+  cursor: pointer;
+  background-position: center;
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+
