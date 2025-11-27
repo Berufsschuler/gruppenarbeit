@@ -25,7 +25,7 @@ class Particle {
 
     reset(){
         this.x = Math.random() * canvas.width;  
-        this.y = -250;
+        this.y = -550;
         this.size = Math.random() < 0.5 ? 20 : 40; // Bildgröße statt Kreisgröße
         this.speedX = 0;
         this.speedY = Math.random() * 1.5 + 1.5;

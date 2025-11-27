@@ -1,11 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register Forum</title>
-</head>
-<body>
-    <h1>Register here:</h1>
-</body>
+    <link rel="stylesheet" href="style_register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="mainOne">
+      <canvas id="canvas1"></canvas>
+      <header style="padding-bottom: 50px">
+        <div class="hname">
+          <h1><c style="color: #9c8809">CCookie </c>Clicker</h1>
+        </div>
+        <div class="hicon">
+          <div class="hpicture"></div>
+        </div>
+      </header>
+
+      <div class="Register_container">
+        <div class="RegisterHolder">
+          <div>
+            <div class="cpicture"></div>
+            <h1 style="margin: 5px">Register</h1>
+            <div class="cpicture"></div>
+          </div>
+          <form action="index.html" method="post">
+            <div class="form-holder">
+              <input
+                type="text"
+                class="input_input"
+                name="first name"
+                placeholder="Enter First Name"
+              />
+            </div>
+
+            <div class="form-holder">
+              <input
+                type="text"
+                class="input_input"
+                name="last name"
+                placeholder="Enter Last Name"
+              />
+            </div>
+
+            <div class="form-holder">
+              <input
+                type="email"
+                class="input_input"
+                name="email"
+                placeholder="Enter E-Mail"
+              />
+            </div>
+            <div class="form-holder">
+              <input
+                type="password"
+                class="input_input"
+                name="password"
+                placeholder="Enter Password"
+              />
+            </div>
+
+            <div class="form-holder">
+              <input
+                type="password"
+                class="input_input"
+                name="confirm password"
+                placeholder="Confirm Passowrd"
+              />
+            </div>
+
+            <div
+              style="display: flex; gap: 50px; align-items: center"
+              class="form-holder"
+            >
+              <input
+                type="submit"
+                class="input_input_button"
+                name="submitButton"
+                value="Sign Up"
+              />
+              <a href="./index.html">
+                <img class="return-arrow" src="./img/arrow.png" />
+              </a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="fname">
+        <h1><c style="color: #9c8809">CCookie </c>Clicker</h1>
+      </div>
+      <div class="ficon">
+        <div class="fpicture"></div>
+      </div>
+    </footer>
+    <script src="cookiesFallingBackground.js"></script>
+  </body>
 </html>

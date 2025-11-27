@@ -15,7 +15,7 @@ body {
   align-items: center;
   padding: 0;
   margin: 0;
-  height: 500%;
+  height: 120%;
   background-color: white;
 }
 
@@ -25,7 +25,7 @@ a {
 
 #mainOne {
   display: flex;
-  height: 18%;
+  height: 90%;
   width: 100%;
 
   flex-direction: column;
@@ -77,13 +77,6 @@ header {
   border-radius: 0.5rem;
   background-color: rgb(83, 83, 83);
 }
-
-.cpicture {
-  background-image: url(./img/CookieBreh.png);
-  height: 20px;
-  width: 20px;
-}
-
 .centerText {
   /* 20 % Text Titel 'CLICKE the C.....*/
   color: black;
@@ -101,7 +94,7 @@ header {
     /* Bottom-left */ 1px -1px 0 black, /* Top-right */ -1px -1px 0 black; /* Top-left */
 }
 
-.login_container {
+.Register_container {
   /* 70 % LOGIN_REGISTER_FORM*/
   height: 70%;
   background-color: white;
@@ -113,12 +106,11 @@ header {
   z-index: 1;
 }
 
-.loginHolder {
+.RegisterHolder {
   margin-top: 20px;
   display: flex;
-  height: 270px;
-  width: 200px;
-  background-color: white;
+  height: 450px;
+  width: 250px;
   justify-content: center;
   align-items: center;
   border: 2px solid rgb(62, 62, 62);
@@ -143,7 +135,7 @@ header {
   margin: 15px;
   color: black;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .input_input {
@@ -162,6 +154,9 @@ header {
   border-radius: 10px;
   cursor: pointer;
 }
+.input_input::placeholder {
+  color: rgba(255, 255, 255, 0.473);
+}
 
 .input_input_button:hover {
   color: white;
@@ -173,16 +168,23 @@ header {
   cursor: pointer;
 }
 
-.input_input::placeholder {
-  color: rgba(255, 255, 255, 0.473);
-}
-
 a {
   color: black;
 }
+
 a:hover {
   font-weight: bolder;
   color: #9c8809;
+}
+
+.return-arrow {
+  width: 15px;
+  height: 15px;
+}
+
+.return-arrow:hover {
+  width: 17px;
+  height: 17px;
 }
 
 #canvas1 {
@@ -190,11 +192,12 @@ a:hover {
   position: fixed;
   background-color: rgb(240, 240, 240);
 }
-.main-footer {
+
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 120px;
+  height: 15%;
   width: 100%;
   background-color: rgb(83, 83, 83);
   z-index: 1;
@@ -230,42 +233,4 @@ a:hover {
   width: 50px;
   border-radius: 0.5rem;
   background-color: rgb(83, 83, 83);
-}
-
-#mainTwo {
-  display: flex;
-  height: 22%;
-  width: 100%;
-
-  flex-direction: column;
-  background-color: transparent;
-  z-index: 4;
-  color: black;
-  display: flex;
-  justify-content: top;
-  align-items: center;
-}
-
-#preview {
-  background-color: transparent;
-  border: 1px solid white;
-  border-radius: 15px 15px 0px 0px;
-  width: 900px;
-  height: 650px;
-  justify-content: center;
-  align-items: top;
-  display: flex;
-  flex-direction: column;
-}
-
-#previewGIF {
-  background-color: rgba(221, 236, 242, 0.559);
-  width: 900px;
-  height: 500px;
-  border-radius: 15px 15px 0px 0px;
-}
-#GIFinformation {
-  width: 900px;
-  height: 150px;
-  background-color: rgba(255, 255, 255, 0.473);
 }
