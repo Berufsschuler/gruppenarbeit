@@ -123,7 +123,7 @@ header {
   background-color: rgb(220, 220, 220, 0.97);
   border-radius: 10px;
   box-shadow: 0px 10px 10px white;
-  padding: 30px;
+  padding: 27px 35px 35px 35px;
   flex-direction: column;
   color: black;
 }
@@ -133,6 +133,10 @@ header {
   border-radius: 5px;
   margin: 15px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .form-holder_2 {
@@ -142,6 +146,9 @@ header {
   color: black;
   text-decoration: none;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input_input {
@@ -155,20 +162,21 @@ header {
 .input_input_button {
   color: white;
   background-color: black;
-  padding: 10px;
+  padding: 14px;
   border: 3px grey solid;
   border-radius: 10px;
   cursor: pointer;
+
 }
 
 .input_input_button:hover {
   color: white;
-  font-weight: bold;
   background-color: rgb(0, 0, 0);
-  padding: 10px;
+  padding: 15px;
   border: 3px #9c8809 solid;
   border-radius: 10px;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .input_input::placeholder {

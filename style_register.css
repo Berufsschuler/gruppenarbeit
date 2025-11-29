@@ -21,6 +21,7 @@ body {
 
 a {
   cursor: pointer;
+  text-decoration: none;
 }
 
 #mainOne {
@@ -110,7 +111,7 @@ header {
   margin-top: 20px;
   display: flex;
   height: 450px;
-  width: 250px;
+  width: 300px;
   justify-content: center;
   align-items: center;
   border: 2px solid rgb(62, 62, 62);
@@ -127,16 +128,16 @@ header {
   border-radius: 5px;
   margin: 15px;
   color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-holder a{
+  text-decoration: none;
 }
 
-.form-holder_2 {
-  padding: 4px;
-  border-radius: 5px;
-  margin: 15px;
-  color: black;
-  text-decoration: none;
-  font-size: 18px;
-}
+
 
 .input_input {
   color: white;
@@ -149,7 +150,7 @@ header {
 .input_input_button {
   color: white;
   background-color: black;
-  padding: 10px;
+  padding: 14px;
   border: 3px grey solid;
   border-radius: 10px;
   cursor: pointer;
@@ -160,12 +161,18 @@ header {
 
 .input_input_button:hover {
   color: white;
-  font-weight: bold;
   background-color: rgb(0, 0, 0);
-  padding: 10px;
+  padding: 15px;
   border: 3px #9c8809 solid;
   border-radius: 10px;
   cursor: pointer;
+  font-weight: bold;
+}
+
+.registrationBottomText{
+  display: flex; 
+  align-items: center; 
+  justify-content:center;
 }
 
 a {
@@ -235,3 +242,9 @@ footer {
   border-radius: 0.5rem;
   background-color: rgb(83, 83, 83);
 }
+
+
+
+
+
+
