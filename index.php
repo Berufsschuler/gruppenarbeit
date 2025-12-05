@@ -39,9 +39,7 @@
 
       <div class="login_container">
         <div class="loginHolder">
-          <div class="cpicture"></div>
           <h1 style="margin: 5px"><br>Login</h1>
-          <div class="cpicture"></div>
           <form action="index.html" method="post">
             <div class="form-holder">
               <input type="email" class="input_input" name="email" placeholder="Enter E-Mail"/>

@@ -6,7 +6,7 @@ html {
   padding: 0;
   scroll-behavior: smooth;
   color: white;
-  font-family: "Merriweather", serif;
+  font-family: Arial, sans-serif;
 }
 
 body {
@@ -133,6 +133,19 @@ header {
   align-items: center;
   flex-direction: column;
 }
+
+.form-holder_2 {
+  padding: 4px;
+  border-radius: 5px;
+  margin: 15px;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .form-holder a{
   text-decoration: none;
 }

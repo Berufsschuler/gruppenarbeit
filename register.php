@@ -81,9 +81,7 @@ if (isset($_POST["submitButton"])) {
       <div class="Register_container">
         <div class="RegisterHolder">
           <div>
-            <div class="cpicture"></div>
             <h1 style="margin: 5px">Registration</h1>
-            <div class="cpicture"></div>
           </div>
 
           <!-- SHOW ERRORS -->
@@ -117,10 +115,10 @@ if (isset($_POST["submitButton"])) {
             <div class="form-holder">
               <input type="password" class="input_input" name="confirm_password" placeholder="Confirm Password" required />
             </div>
-            <div class="form-holder">
+            <div style="margin-bottom: 35px" class="form-holder">
               <input type="submit" class="input_input_button" name="submitButton" value="Sign up" />
             </div>
-            <a style="display: flex; align-items: end; justify-content:center" href="index.php"><span>Already have an account?</span></a></form>
+            <a class="form-holder_2" style="display: flex; align-items: end; justify-content:center" href="index.php"><span>Already have an account?</span></a></form>
         </div>
       </div>
     </div>
