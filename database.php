@@ -1,12 +1,12 @@
 <?php
 
 $host = "localhost";
-$username = "root";
-$password = "";
+$usernameDB = "root";
+$passwordDB = "";
 $database = "cookiebase";
 
 // Create connection
-$conn = mysqli_connect($host, $username, $password, $database);
+$conn = mysqli_connect($host, $usernameDB, $passwordDB, $database);
 
 // Check connection
 if (!$conn) {
