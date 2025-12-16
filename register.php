@@ -4,7 +4,7 @@ $errors = [];
 $successMessage = "";
 
 if (isset($_POST["submitButton"])) {
-    $username = $_POST["username"];
+    $username = trim($_POST["username"]);
     $email = trim($_POST["email"]);
     $password = $_POST["password"];
     $confirmPassword = $_POST["confirm_password"];
@@ -28,17 +28,28 @@ if (isset($_POST["submitButton"])) {
 
     // DATABASE CHECK
     require_once("database.php");
-    $sql = "SELECT * FROM users WHERE email = '$email'";
-    $result = mysqli_query($conn, $sql);
-    if (mysqli_num_rows($result) > 0) {
+
+    $sql = "SELECT id FROM users WHERE email = ?";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+    if (mysqli_stmt_num_rows($stmt) > 0) {
         $errors[] = "Email already exists!";
     }
+    mysqli_stmt_close($stmt);
 
-    $sql = "SELECT * FROM users WHERE username = '$username'";
-    $result = mysqli_query($conn, $sql);
-    if (mysqli_num_rows($result) > 0) {
+    $sql = "SELECT id FROM users WHERE username = ?";
+    $stmt = mysqli_stmt_init($conn);
+    mysqli_stmt_prepare($stmt, $sql);
+    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_store_result($stmt);
+    if (mysqli_stmt_num_rows($stmt) > 0) {
         $errors[] = "Username already exists!";
     }
+    mysqli_stmt_close($stmt);
 
     // IF NO ERRORS → INSERT
     if (count($errors) === 0) {
@@ -54,6 +65,8 @@ if (isset($_POST["submitButton"])) {
     }
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -89,7 +102,7 @@ if (isset($_POST["submitButton"])) {
               <div class="error-box">
                   <?php foreach ($errors as $error): ?>
                       <div class="alert alert-danger" role="alert">
-                          <?php echo $error; ?>
+                          <?php echo htmlspecialchars($error, ENT_QUOTES, 'UTF-8'); ?>
                       </div>
                   <?php endforeach; ?>
               </div>
@@ -98,16 +111,16 @@ if (isset($_POST["submitButton"])) {
           <!-- SUCCESS -->
           <?php if (!empty($successMessage)): ?>
             <div class="alert alert-success" role="alert">
-                <?php echo $successMessage; ?>
+                <?php echo htmlspecialchars($successMessage, ENT_QUOTES, 'UTF-8'); ?>
             </div>
           <?php endif; ?>
 
           <form action="register.php" method="post">
             <div class="form-holder">
-              <input type="text" class="input_input" name="username" placeholder="Enter Username" required />
+              <input type="text" class="input_input" name="username" placeholder="Enter Username" value="<?php echo htmlspecialchars($username ?? '', ENT_QUOTES, 'UTF-8'); ?>" required />
             </div>
             <div class="form-holder">
-              <input type="email" class="input_input" name="email" placeholder="Enter E-Mail" required />
+              <input type="email" class="input_input" name="email" placeholder="Enter E-Mail" value="<?php echo htmlspecialchars($email ?? '', ENT_QUOTES, 'UTF-8'); ?>" required />
             </div>
             <div class="form-holder">
               <input type="password" class="input_input" name="password" placeholder="Enter Password" required />
