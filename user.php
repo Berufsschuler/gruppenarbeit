@@ -1,11 +1,38 @@
-
 <?php
 session_start();
-if(!isset($_SESSION["user"])){
+
+// Session prüfen
+if (!isset($_SESSION["user_id"])) {
     header("Location: login.php");
+    exit();
 }
+
+// DB-Verbindung
+require_once("database.php");
+
+// User aus der DB holen
+$user_id = $_SESSION["user_id"];
+$stmt = mysqli_prepare($conn, "SELECT username, email, `role` FROM users WHERE id = ?");
+mysqli_stmt_bind_param($stmt, "i", $user_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+
+if ($row = mysqli_fetch_assoc($result)) {
+    $username = $row['username']; // Username statt full_name
+    $role = $row['role'];         // hier holen wir die Rolle dynamisch
+} else {
+    // Ungültige Session → Logout erzwingen
+    session_destroy();
+    header("Location: login.php");
+    exit();
+}
+
+// Cookie Count
 $count = isset($_COOKIE['cookieCount']) ? intval($_COOKIE['cookieCount']) : 0;
 ?>
+
+
+
 
 
 <!DOCTYPE html>
@@ -27,6 +54,11 @@ $count = isset($_COOKIE['cookieCount']) ? intval($_COOKIE['cookieCount']) : 0;
         <div class="hname">
           <h1><c style="color: #9c8809">CCookie </c>Clicker</h1>
         </div>
+
+        <?php if($role === 'admin'): ?>
+            <a href="admin.php"><button>Admin Panel</button></a>
+        <?php endif; ?>
+
 
         <p class="menu_icon">☰</p> 
       </header>

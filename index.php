@@ -1,56 +1,58 @@
 <?php
+session_start();
 
-  session_start();
+$errors = [];
+$count = isset($_COOKIE['cookieCount']) ? intval($_COOKIE['cookieCount']) : 0;
 
-  $errors = [];
-
-  $count = isset($_COOKIE['cookieCount']) ? intval($_COOKIE['cookieCount']) : 0;
-
-
-  if (isset($_POST["submitButton"])) {
+if (isset($_POST["submitButton"])) {
     $email = trim($_POST["email"]);
     $password = $_POST["password"];
 
     require_once("database.php");
-  
+
     // VALIDATION
-    if (empty($email) OR empty($password)) {
+    if (empty($email) || empty($password)) {
         $errors[] = "All fields are required!";
     }
+
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Email is not valid!";
-    }    if(count($errors) === 0){
+    }
+
+    if (count($errors) === 0) {
         $sql = "SELECT * FROM users WHERE email = ?";
         $stmt = mysqli_stmt_init($conn);
-        $prepareStm = mysqli_stmt_prepare($stmt, $sql);
 
-        if($prepareStm){
-            mysqli_stmt_bind_param($stmt,"s", $email);
-
+        if (mysqli_stmt_prepare($stmt, $sql)) {
+            mysqli_stmt_bind_param($stmt, "s", $email);
             mysqli_stmt_execute($stmt);
-
             $result = mysqli_stmt_get_result($stmt);
 
-            if($row = mysqli_fetch_assoc($result)){
-                //check password 
-                if(password_verify($password, $row["password"])){
-                    $_SESSION["user"] = $row["id"];
+            if ($row = mysqli_fetch_assoc($result)) {
+                // check password
+                if (password_verify($password, $row["password"])) {
+                    // Nur ID und Name in die Session speichern
+                    $_SESSION["user_id"] = $row["id"];
                     $_SESSION["name"] = $row["full_name"];
+
+                    // Session ID regenerieren für Sicherheit
+                    session_regenerate_id(true);
 
                     header("Location: user.php");
                     exit();
-                } else{
-                    array_push($errors, "Incorrect password!");
+                } else {
+                    $errors[] = "Incorrect password!";
                 }
             } else {
-                array_push($errors,"E-Mail not found!");
+                $errors[] = "E-Mail not found!";
             }
-        } else{
-            die("Something went wrong!");
+        } else {
+            die("Something went wrong with the database!");
         }
     }
-  }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
