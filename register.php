@@ -68,10 +68,11 @@ if (isset($_POST["submitButton"])) {
 
 /*
 // damit sowas nicht passiert: (mit mysqli_stmt arbeiten) 
-// INSERT INTO users (username, email, password)  
-// VALUES ('test'); DELETE FROM users; --', 'mail@test.de', '1234');
 
-weil der user bei username das eingegeben hat:  'test'); DELETE FROM users; --
+INSERT INTO users (username, email, password)
+VALUES ('test', 'x', 'x'); DELETE FROM users; --', 'mail@test.de', '1234');
+
+weil der user bei username das eingegeben hat:  'test', 'x', 'x'); DELETE FROM users; --
 */
 
 ?>
