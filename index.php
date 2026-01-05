@@ -1,5 +1,7 @@
 <?php
 
+  session_start();
+
   $errors = [];
 
   $count = isset($_COOKIE['cookieCount']) ? intval($_COOKIE['cookieCount']) : 0;
