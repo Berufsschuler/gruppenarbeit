@@ -155,8 +155,11 @@ weil der user bei username das eingegeben hat:  'test', 'x', 'x'); DELETE FROM u
       <div class="ficon"><div class="fpicture"></div></div>
     </footer>
 
-    <script src="cookiesFallingBackground.js"></script>
+    <script src="cookiesFallingBackground.js"></script> 
   </body>
+
+          <!--htmlspecialchars nutzen, damit z.B. keine Variablen geändert werden können per link (mit javascript): -->
+          <!--https://ccclicker.at/register.php?username="><script>alert("You got hacked")</script>    FAKE LINKS KÖNNEN GENTUZT WERDEN--> 
 </html>
 
 
