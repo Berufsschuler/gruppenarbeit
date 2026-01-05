@@ -1,5 +1,53 @@
 <?php
+
+  $errors = [];
+
   $count = isset($_COOKIE['cookieCount']) ? intval($_COOKIE['cookieCount']) : 0;
+
+
+  if (isset($_POST["submitButton"])) {
+    $email = trim($_POST["email"]);
+    $password = $_POST["password"];
+
+    require_once("database.php");
+  
+    // VALIDATION
+    if (empty($email) OR empty($password)) {
+        $errors[] = "All fields are required!";
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $errors[] = "Email is not valid!";
+    }    if(count($errors) === 0){
+        $sql = "SELECT * FROM users WHERE email = ?";
+        $stmt = mysqli_stmt_init($conn);
+        $prepareStm = mysqli_stmt_prepare($stmt, $sql);
+
+        if($prepareStm){
+            mysqli_stmt_bind_param($stmt,"s", $email);
+
+            mysqli_stmt_execute($stmt);
+
+            $result = mysqli_stmt_get_result($stmt);
+
+            if($row = mysqli_fetch_assoc($result)){
+                //check password 
+                if(password_verify($password, $row["password"])){
+                    $_SESSION["user"] = $row["id"];
+                    $_SESSION["name"] = $row["full_name"];
+
+                    header("Location: user.php");
+                    exit();
+                } else{
+                    array_push($errors, "Incorrect password!");
+                }
+            } else {
+                array_push($errors,"E-Mail not found!");
+            }
+        } else{
+            die("Something went wrong!");
+        }
+    }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +88,7 @@
       <div class="login_container">
         <div class="loginHolder">
           <h1 style="margin: 5px"><br>Login</h1>
-          <form action="index.html" method="post">
+          <form action="index.php" method="post">
             <div class="form-holder">
               <input type="email" class="input_input" name="email" placeholder="Enter E-Mail"/>
             </div>
