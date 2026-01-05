@@ -76,28 +76,28 @@ $count = isset($_COOKIE['cookieCount']) ? intval($_COOKIE['cookieCount']) : 0;
 
         <div class="leaderboard">
           <div class="entry">
-            <span class="rank">1</span>
-            <span class="name">SteelFort</span>
-            <span class="points">245 270 Cookies</span>
+            <span class="rank"></span>
+            <span class="name"></span>
+            <span class="points"></span>
           </div>
 
           <div class="entry highlight">
-            <span class="rank">2</span>
-            <span class="name">Nagrarok</span>
-            <span class="points">221 564 Cookies</span>
-            <span class="rank-arrow">▲</span>
+            <span class="rank"></span>
+            <span class="name"></span>
+            <span class="points"></span>
+            <span class="rank-arrow"></span>
           </div>
 
           <div class="entry">
-            <span class="rank">3</span>
-            <span class="name">MissRubis</span>
-            <span class="points">201 054 Cookies</span>
+            <span class="rank"></span>
+            <span class="name"></span>
+            <span class="points"></span>
           </div>
 
           <div class="entry">
-            <span class="rank">4</span>
-            <span class="name">RaptorTwo</span>
-            <span class="points">180 874 Cookies</span>
+            <span class="rank"></span>
+            <span class="name"></span>
+            <span class="points"></span>
           </div>
           </div>
         </div>
