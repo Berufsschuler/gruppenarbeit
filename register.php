@@ -49,11 +49,12 @@ if (isset($_POST["submitButton"])) {
     if (mysqli_stmt_num_rows($stmt) > 0) {
         $errors[] = "Username already exists!";
     }
+    
     mysqli_stmt_close($stmt);
 
     // IF NO ERRORS → INSERT
     if (count($errors) === 0) {
-        $sql = "INSERT INTO users (username, email, `password`) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO users (username, email, `password`) VALUES (?, ?, ?)"; 
         $stmt = mysqli_stmt_init($conn);
         if (mysqli_stmt_prepare($stmt, $sql)) {
             mysqli_stmt_bind_param($stmt, "sss", $username, $email, $passwordHash);
@@ -64,6 +65,15 @@ if (isset($_POST["submitButton"])) {
         }
     }
 }
+
+/*
+// damit sowas nicht passiert: (mit mysqli_stmt arbeiten) 
+// INSERT INTO users (username, email, password)  
+// VALUES ('test'); DELETE FROM users; --', 'mail@test.de', '1234');
+
+weil der user bei username das eingegeben hat:  'test'); DELETE FROM users; --
+*/
+
 ?>
 
 
@@ -147,3 +157,5 @@ if (isset($_POST["submitButton"])) {
     <script src="cookiesFallingBackground.js"></script>
   </body>
 </html>
+
+
