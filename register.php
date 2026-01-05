@@ -54,7 +54,7 @@ if (isset($_POST["submitButton"])) {
 
     // IF NO ERRORS → INSERT
     if (count($errors) === 0) {
-        $sql = "INSERT INTO users (username, email, `password`) VALUES (?, ?, ?)"; 
+        $sql = "INSERT INTO users (username, email, `password`, `role`) VALUES (?, ?, ?, 'user')"; 
         $stmt = mysqli_stmt_init($conn);
         if (mysqli_stmt_prepare($stmt, $sql)) {
             mysqli_stmt_bind_param($stmt, "sss", $username, $email, $passwordHash);

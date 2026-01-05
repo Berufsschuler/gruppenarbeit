@@ -196,6 +196,8 @@
       <div class="ficon">
         <div class="fpicture"></div>
       </div>
+      
+      <a href="impressum.html" style="color:white">IMPRESSUM</a>
     </footer>
 
     <script src="cookiesFallingBackground.js"></script>
