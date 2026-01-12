@@ -115,6 +115,5 @@ if ($row = mysqli_fetch_assoc($result)) {
         <div class="fpicture"></div>
       </div>
     </footer>
-    <script src="cookieClickTest.js"></script>
 </body>
 </html>
