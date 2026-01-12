@@ -48,20 +48,30 @@ if ($row = mysqli_fetch_assoc($result)) {
     />
   </head>
 <body>
-      <header>
-        <div class="hname">
-          <h1><c style="color: #9c8809">CCookie </c>Clicker</h1>
-        </div>
+  <header>
+    <div class="hname">
+      <h1><c style="color: #9c8809">CCookie </c>Clicker</h1>
+    </div>
 
-        <?php if($role === 'admin'): ?>
-            <a href="admin.php"><button>Admin Panel</button></a>
-        <?php endif; ?>
+    <?php if($role === 'admin'): ?>
+        <a href="admin.php"><button>Admin Panel</button></a>
+    <?php endif; ?>
 
-        <div class="login_icon_container">
-          <div class="login_icon"></div>
-        </div>
-        
-      </header>
+    <div class="login_icon_container">
+      <div class="login_icon"></div>
+    </div>
+    
+  </header>
+
+
+  <!-- Leaderboard -->
+  <div id="leaderboard">
+    <h2>🍪 Leaderboard 🍪</h2>
+    <div>[Profilbild] Aleksandar 2430</div>
+    <div>[Profilbild] Ludwig 1960</div>
+    <div>[Profilbild] Marko 980</div>
+    <div>[Profilbild] Paul 340</div>
+  </div>
 
     <div>
         

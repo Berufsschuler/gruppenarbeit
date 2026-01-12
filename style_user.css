@@ -78,14 +78,36 @@ header {
 
 
 
+/*--------- LEADORBOARD ---------*/
+#leaderboard {
+  display:flex;
+  justify-content: top;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.8);
+
+
+}
+
+
+
+
+
 /*--------- MAIN COOKIE ---------*/
 #mainCookie {
+position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 600px;
-  width: 100%;
+  width: 300px; 
+  z-index: 1; 
 }
 
 #mainCookiepng {
