@@ -57,8 +57,10 @@ if ($row = mysqli_fetch_assoc($result)) {
             <a href="admin.php"><button>Admin Panel</button></a>
         <?php endif; ?>
 
-
-        <div></div>
+        <div class="login_icon_container">
+          <div class="login_icon"></div>
+        </div>
+        
       </header>
 
     <div>
@@ -66,39 +68,6 @@ if ($row = mysqli_fetch_assoc($result)) {
       <div id="mainCookie">
       <div id="tryCookie" style="width:300px; height:300px; background-image:url('./img/cookie_1.png'); background-size:cover; cursor:pointer;"></div>
       <div id="tryCookieCounter" style="font-size:30px;">Counter: </div>
-      </div>
-
-      <div id="mainThree">
-      <div class="leaderboard-section">
-      <h1 id="ClimbUpTheLadder">CLIMB UP THE&nbsp;<span style="color:#9c8809">LADDER!</span></h1>
-
-        <div class="leaderboard">
-          <div class="entry">
-            <span class="rank"></span>
-            <span class="name"></span>
-            <span class="points"></span>
-          </div>
-
-          <div class="entry highlight">
-            <span class="rank"></span>
-            <span class="name"></span>
-            <span class="points"></span>
-            <span class="rank-arrow"></span>
-          </div>
-
-          <div class="entry">
-            <span class="rank"></span>
-            <span class="name"></span>
-            <span class="points"></span>
-          </div>
-
-          <div class="entry">
-            <span class="rank"></span>
-            <span class="name"></span>
-            <span class="points"></span>
-          </div>
-          </div>
-        </div>
       </div>
     </div>
 
