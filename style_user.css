@@ -486,20 +486,5 @@ a:hover {
   align-items: center;
 }
 
-.menu_icon{
-    display: flex;
-    justify-content: end;
-    color: black;
-    font-size: 45px;
-    outline: white;
-    font-weight: normal;
-    z-index: 1;
-    margin-left: 375px;
-}
 
-.menu_icon:hover{
-  cursor: pointer;
-  font-weight: bold;
-  color: #9c8809;
-}
 
