@@ -67,7 +67,7 @@ if ($row = mysqli_fetch_assoc($result)) {
         
       <div id="mainCookie">
       <div id="mainCookiepng"></div>
-      <div id="mainCookieCounter" style="font-size:30px;">Counter: </div>
+      <div id="mainCookieCounter">Counter: </div>
       </div>
 
     </div>
