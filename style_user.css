@@ -463,7 +463,7 @@ a:hover {
   100% { transform: translateY(0); }
 }
 
-#tryCookie {
+#mainCookiepng {
   background-image: url(./img/cookie_1.png);
   background-size: 300px 450px;
   height: 300px;

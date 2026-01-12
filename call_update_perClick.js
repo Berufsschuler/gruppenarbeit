@@ -1,5 +1,5 @@
-const cookie = document.getElementById("cookie");
-const counterDisplay = document.getElementById("counterName");
+const cookie = document.getElementById("mainCookie");
+const counterDisplay = document.getElementById("mainCookieCounter");
 
 cookie.addEventListener("click", function(){
     fetch("update_user_counter.php")

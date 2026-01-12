@@ -66,12 +66,11 @@ if ($row = mysqli_fetch_assoc($result)) {
     <div>
         
       <div id="mainCookie">
-      <div id="tryCookie" style="width:300px; height:300px; background-image:url('./img/cookie_1.png'); background-size:cover; cursor:pointer;"></div>
-      <div id="tryCookieCounter" style="font-size:30px;">Counter: </div>
+      <div id="mainCookiepng" style="width:300px; height:300px; background-image:url('./img/cookie_1.png'); background-size:cover; cursor:pointer;"></div>
+      <div id="mainCookieCounter" style="font-size:30px;">Counter: </div>
       </div>
+
     </div>
-
-
 
 
 
@@ -85,5 +84,6 @@ if ($row = mysqli_fetch_assoc($result)) {
       </div>
     </footer>
     <script src="cookieClickTest.js"></script>
+    <script src="call_update_perClick.js"></script>
 </body>
 </html>
