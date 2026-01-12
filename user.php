@@ -27,8 +27,6 @@ if ($row = mysqli_fetch_assoc($result)) {
     exit();
 }
 
-// Cookie Count
-$count = isset($_COOKIE['cookieCount']) ? intval($_COOKIE['cookieCount']) : 0;
 ?>
 
 
@@ -67,7 +65,7 @@ $count = isset($_COOKIE['cookieCount']) ? intval($_COOKIE['cookieCount']) : 0;
         
       <div id="mainCookie">
       <div id="tryCookie" style="width:300px; height:300px; background-image:url('./img/cookie_1.png'); background-size:cover; cursor:pointer;"></div>
-      <div id="tryCookieCounter" style="font-size:30px;">Counter: <?php echo $count; ?></div>
+      <div id="tryCookieCounter" style="font-size:30px;">Counter: </div>
       </div>
 
       <div id="mainThree">
