@@ -1,4 +1,5 @@
-const cookie = document.getElementById("mainCookie");
+
+const cookie = document.getElementById("mainCookiepng");
 const counterDisplay = document.getElementById("mainCookieCounter");
 
 cookie.addEventListener("click", function(){
