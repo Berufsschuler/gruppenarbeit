@@ -58,7 +58,7 @@ if ($row = mysqli_fetch_assoc($result)) {
         <?php endif; ?>
 
 
-        <p class="menu_icon">☰</p> 
+        <div></div>
       </header>
 
     <div>
@@ -115,5 +115,6 @@ if ($row = mysqli_fetch_assoc($result)) {
         <div class="fpicture"></div>
       </div>
     </footer>
+    <script src="cookieClickTest.js"></script>
 </body>
 </html>
