@@ -67,11 +67,13 @@ if ($row = mysqli_fetch_assoc($result)) {
   <!-- Leaderboard -->
   <div id="leaderboard">
     <h2>🍪 Leaderboard 🍪</h2>
-    <div>[Profilbild] Aleksandar 2430</div>
-    <div>[Profilbild] Ludwig 1960</div>
-    <div>[Profilbild] Marko 980</div>
-    <div>[Profilbild] Paul 340</div>
+    <div id="leaderboard_element" style="border-color:red">1. [Pb] Aleksandar | 2430 🍪</div>
+    <div id="leaderboard_element">2. [Pb] Ludwig | 1960 🍪</div>
+    <div id="leaderboard_element">3. [Pb] Marko | 980 🍪</div>
+    <div id="leaderboard_element">4. [Pb] Paul | 340 🍪</div>
+    <b>Your Rank:</b> 1. Place
   </div>
+  
 
     <div>
         
