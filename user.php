@@ -19,16 +19,35 @@ $result = mysqli_stmt_get_result($stmt);
 
 if ($row = mysqli_fetch_assoc($result)) {
     $username = $row['username']; // Username statt full_name
-    $role = $row['role'];         // hier holen wir die Rolle dynamisch
+    $role = $row['role'];
 } else {
-    // Ungültige Session → Logout erzwingen
+    // Ungültige Session => Logout erzwingen
     session_destroy();
     header("Location: login.php");
     exit();
 }
 
-?>
+//Cookies anzahl kontrollieren:
+$stmt = mysqli_prepare($conn, "SELECT cookies FROM users WHERE id = ?");
+mysqli_stmt_bind_param($stmt, "i", $user_id);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+$row = mysqli_fetch_assoc($result);
+$my_cookies = $row['cookies'];
 
+
+//Position finden
+$stmt = mysqli_prepare($conn, "SELECT COUNT(*) AS rank FROM users WHERE cookies > ?");
+mysqli_stmt_bind_param($stmt, "i", $my_cookies);
+mysqli_stmt_execute($stmt);
+$result = mysqli_stmt_get_result($stmt);
+$row = mysqli_fetch_assoc($result);
+
+$my_position = $row['rank'] + 1;
+
+
+
+?>
 
 
 
@@ -64,14 +83,32 @@ if ($row = mysqli_fetch_assoc($result)) {
   </header>
 
 
-  <!-- Leaderboard -->
+  <?php
+    // Leaderboard-Daten holen
+    $leaderboard = [];
+    $stmt = mysqli_prepare($conn, "SELECT username, cookies FROM users ORDER BY cookies DESC");
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+
+    while($row = mysqli_fetch_assoc($result)) {
+        $leaderboard[] = $row;
+    }
+  ?>
+
   <div id="leaderboard">
     <h2>🍪 Leaderboard 🍪</h2>
-    <div id="leaderboard_element" style="border-color:red">1. [Pb] Aleksandar | 2430 🍪</div>
-    <div id="leaderboard_element">2. [Pb] Ludwig | 1960 🍪</div>
-    <div id="leaderboard_element">3. [Pb] Marko | 980 🍪</div>
-    <div id="leaderboard_element">4. [Pb] Paul | 340 🍪</div>
-    <b>Your Rank:</b> 1. Place
+    
+    <div id="leaderboardLadder">
+      <?php foreach($leaderboard as $index => $user): ?>
+        <div class="leaderboard_element">
+          <?= ($index + 1) ?>. <?= htmlspecialchars($user['username']) ?> | <?= $user['cookies'] ?> 🍪
+        </div>
+      <?php endforeach; ?>
+    </div>
+
+    <div id="leaderboardPosition">
+      <p>Your Position: <?= $my_position ?>.</p>
+    </div>
   </div>
   
 
@@ -79,7 +116,7 @@ if ($row = mysqli_fetch_assoc($result)) {
         
       <div id="mainCookie">
       <div id="mainCookiepng"></div>
-      <div id="mainCookieCounter">Counter: </div>
+      <div id="mainCookieCounter">Counter: <?= $my_cookies?></div>
       </div>
 
     </div>
