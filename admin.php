@@ -27,7 +27,7 @@ if ($row = mysqli_fetch_assoc($result)) {
 
 // User abrufen
 $users = [];
-$query = "SELECT id, username, email, `role` FROM users";
+$query = "SELECT id, username, email, `role`, cookies FROM users";
 $result = mysqli_query($conn, $query);
 if ($result) {
     while ($row = mysqli_fetch_assoc($result)) {
@@ -67,7 +67,7 @@ if ($result) {
                 </td>
                 <td><?= htmlspecialchars($user['username']) ?></td>
                 <td><?= htmlspecialchars($user['email']) ?></td>
-                <td>0</td>
+                <td><?= htmlspecialchars($user['cookies']) ?></td>
             </tr>
         <?php endforeach; ?>
     </tbody>
