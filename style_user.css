@@ -59,7 +59,7 @@ header {
     -1px -1px 0 black;
 }
 
-.login_icon {
+#login_icon {
   border-radius: 500px;
   border: 3px solid black;
   width: 50px;
@@ -72,10 +72,37 @@ header {
   width: 370px;
 }
 
-.login_icon:hover {
+#login_icon:hover {
   border: 4px solid #9c8809;
   cursor: pointer;
 }
+
+.sidepanel  {
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  height: 120px;
+  top: 75px;
+  right: 0;
+  background-color:  rgba(0, 0, 0, 0.8);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 0px;
+}
+
+.sidepanel a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: white;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel a:hover {
+  color:#9c8809;
+}
+
 
 
 

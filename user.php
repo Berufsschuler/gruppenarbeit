@@ -76,10 +76,49 @@ $my_position = $row['rank'] + 1;
         <a href="admin.php"><button>Admin Panel</button></a>
     <?php endif; ?>
 
+    <div id="mySidepanel" class="sidepanel">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
+      <a onclick="openExplorer()">Change Profile Picture</a>
+      <a href="logout.php">Logout</a>
+      <input type="file" id="fileInput" style="display:none">
+    </div>
+
+    <script>
+    
+    function openExplorer() {
+      document.getElementById("fileInput").click();
+    }
+
+    document.getElementById("fileInput").addEventListener("change", function () {
+      const file = this files[0];
+      if (!file) return;
+
+      const imageURL = URL.createObjectURL(file);
+
+      const previewDiv = document.getElementById("login_icon");
+      previewDiv.style.backgroundImage = `url('${imageURL})')`;
+    })
+
+    </script>
+
+
     <div class="login_icon_container">
-      <div class="login_icon"></div>
+      <div id="login_icon" onclick="changeNav()"></div>
     </div>
     
+    <script>
+      let open = false;
+      function changeNav() {
+        if(open == false){
+          document.getElementById("mySidepanel").style.width = "465px";
+          open = true;
+        } else {
+          document.getElementById("mySidepanel").style.width = "0px";
+          open = false;
+        }
+      }
+    </script>
+
   </header>
 
 
