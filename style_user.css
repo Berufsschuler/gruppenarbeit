@@ -262,7 +262,6 @@ position: absolute;
 }
 
 .fname {
-  margin-right: 130px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,6 +273,7 @@ position: absolute;
     -1px 1px 0 black,
     1px -1px 0 black,
     -1px -1px 0 black;
+  margin-right: 20px;
 }
 
 .ficon {
