@@ -121,11 +121,9 @@ if (isset($_POST["submitButton"])) {
             playsinline
           ></video>
         </div>
-        <div id="GIFinformation">
-          The <span style="color: #9c8809;">Competitive Cookie Clicker</span> 
-          is a thrilling online game that combines the addictive mechanics of traditional 
-          cookie clicker games with competitiveness.
-        </div>
+          <div id="GIFinformation">
+            <span class="highlight-text">CLICK CLICK CLICK</span> - that is our moto
+          </div>
       </div>
     </div>
 

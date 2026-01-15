@@ -280,7 +280,15 @@ a:hover {
   font-weight: bold;
   border-top: 3px solid black;
   box-sizing: border-box;
+  text-align: center; /* optional, zentriert den Text */
 }
+
+.highlight-text {
+  color: white; /* goldener Akzent wie bei deinem Titel */
+  font-weight: bold;
+  text-shadow: 1px 1px 2px #000; /* leicht Schatten für mehr Lesbarkeit */
+}
+
 
 
 #mainThree {

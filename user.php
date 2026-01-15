@@ -79,6 +79,10 @@ $my_position = $row['rank'] + 1;
         <a href="admin.php"><button>Admin Panel</button></a>
     <?php endif; ?>
 
+    <a id="eventButton" href="events.php"><button>Events</button></a>
+        <a id="eventButton" href="user.php"><button>My Cookie</button></a>
+
+
     <div id="mySidepanel" class="sidepanel">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
       <a onclick="openExplorer()">Change Profile Picture</a>
@@ -201,16 +205,20 @@ $my_position = $row['rank'] + 1;
 
 
     <footer class="main-footer">
-      <div class="fname">
-        <h1><c style="color: #9c8809">CCookie </c>Clicker</h1>
-      </div>
-      <div id="creators">Made by: Aleksandar Tesinic & Paul Heigl</div>
-      <div class="ficon">
-        <div class="fpicture"></div>
-      </div>
+        <div class="footer-left">
+            <div class="fname">
+            <h1><c style="color: #9c8809">CCookie </c>Clicker</h1>
+            </div>
+            <div id="creators">Made by: Aleksandar Tesinic & Paul Heigl</div>
+        </div>
 
-      <a href="impressum.html" style="color:white">IMPRESSUM</a>
+        <div class="ficon">
+            <div class="fpicture"></div>
+        </div>
 
+        <div class="footer-right">
+            <a href="impressum.html" style="color:white">IMPRESSUM</a>
+        </div>
     </footer>
     <script src="call_update_perClick.js"></script>
 </body>

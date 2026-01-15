@@ -59,6 +59,24 @@ header {
     -1px -1px 0 black;
 }
 
+#eventButton button {
+    background-color: #9c8809; /* gold-braun passend zu CCookie */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin-left: 10px;
+    border-radius: 8px;
+    font-family: 'Merriweather', serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 2px solid black;
+}
+
+#eventButton button:hover {
+    background-color: #b5980f; /* heller beim Hover */
+}
+
 #login_icon {
   border-radius: 500px;
   border: 3px solid black;
