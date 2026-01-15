@@ -3,13 +3,14 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const particleAmount = 500;
+const particleAmount = 300;
 const particleHolder = [];
 
 // Bild laden
 const img = new Image();
 img.src = "img/CookieBreh.png";
 
+// Fenstergröße anpassen
 window.addEventListener("resize", function(){
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
@@ -20,21 +21,29 @@ window.addEventListener("resize", function(){
 // ------------------------------
 class Particle {
     constructor(){
-        this.reset();
+        this.reset(true); // beim ersten Mal gleichmäßig verteilt starten
     }
 
-    reset(){
-        this.x = Math.random() * canvas.width;  
-        this.y = -550;
-        this.size = Math.random() < 0.5 ? 20 : 40; // Bildgröße statt Kreisgröße
+    reset(initial = false){
+        this.x = Math.random() * canvas.width;
+        this.size = Math.random() < 0.5 ? 20 : 40; 
         this.speedX = 0;
         this.speedY = Math.random() * 1.5 + 1.5;
+
+        if(initial){
+            // Zufällige Y-Position für gleichmäßige Startverteilung
+            this.y = Math.random() * canvas.height;
+        } else {
+            // Normaler Reset: oben starten
+            this.y = -this.size;
+        }
     }
 
     update(){
         this.x += this.speedX;
         this.y += this.speedY;
 
+        // Wenn unten, wieder oben starten
         if (this.y > canvas.height) {
             this.reset();
         }
@@ -71,7 +80,7 @@ function particleControl(){
 // Animation
 // ------------------------------
 function animate(){
-    ctx.clearRect(0,0, canvas.width,canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     particleControl();
     requestAnimationFrame(animate);
 }

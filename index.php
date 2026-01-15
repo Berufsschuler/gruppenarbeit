@@ -112,24 +112,23 @@ if (isset($_POST["submitButton"])) {
 
     <div id="mainTwo">
       <div id="preview">
-          <div id="previewGIF">
-            <video 
-              src="/gruppenarbeit/videos/40_prozent.mp4"
-              autoplay
-              muted
-              loop
-              playsinline
-              style="width: 100%; height: auto; border-radius: 10px 10px 0px 0px;"
-            ></video>
-          </div>
+        <div id="previewGIF">
+          <video 
+            src="/gruppenarbeit/videos/trailer.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+          ></video>
         </div>
         <div id="GIFinformation">
-          The <c style="color: #9c8809">Competitive Cookie Clicker </c>is a thrilling online game 
-          that combines the addictive mechanics of traditional 
-          cookie clicker games with competitiveness. 
+          The <span style="color: #9c8809;">Competitive Cookie Clicker</span> 
+          is a thrilling online game that combines the addictive mechanics of traditional 
+          cookie clicker games with competitiveness.
         </div>
       </div>
     </div>
+
     <div id="mainThree">
       <div class="leaderboard-section">
       <h1 id="ClimbUpTheLadder">CLIMB UP THE&nbsp;<span style="color:#9c8809">LADDER!</span></h1>

@@ -114,7 +114,7 @@ header {
   margin-top: 20px;
   display: flex;
   height: 300px;
-  width: 200px;
+  width: 240px;
   justify-content: center;
   align-items: center;
   border: 2px solid rgb(62, 62, 62);
@@ -237,45 +237,51 @@ a:hover {
   background-color: rgb(83, 83, 83);
 }
 
+
 #mainTwo {
   display: flex;
-  height: 15%;
-  width: 100%;
-
   flex-direction: column;
-  background-color: transparent;
+  align-items: center;
+  width: 100%;
   z-index: 4;
   color: black;
-  justify-content: top;
-  align-items: center;
   background-color: transparent;
+  padding: 20px 0;
 }
 
 #preview {
-  background-color: transparent;
-  border: 3px solid rgb(0, 0, 0);
-  border-radius: 15px 15px 0px 0px;
-  width: 890px;
-  height: 60%;
-  justify-content: center;
-  align-items: top;
   display: flex;
   flex-direction: column;
+  width: 90%;
+  max-width: 900px;
+  border: 3px solid black;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: transparent;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 #previewGIF {
-  background-color: rgba(221, 236, 242, 0.559);
-  height: 100%;
-  border-radius: 15px 15px 0px 0px;
+  background-color: rgba(221, 236, 242, 0.56);
+  width: 100%;
 }
+
+#previewGIF video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 #GIFinformation {
-  width: 890px;
-  height: 20%;
-  background-color: rgb(220, 220, 220, 0.99);
-  border: 3px solid black;
-  font-size: 20px;
+  width: 100%;
+  background-color: rgba(220, 220, 220, 0.99);
+  padding: 15px;
+  font-size: 18px;
   font-weight: bold;
+  border-top: 3px solid black;
+  box-sizing: border-box;
 }
+
 
 #mainThree {
   display: flex;
