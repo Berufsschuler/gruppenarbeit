@@ -84,7 +84,7 @@ if (isset($_POST["submitButton"])) {
         <h1>
           Click the <m style="color: #9c8809">Cookie</m>. Climb the
           <m style="color: #9c8809">Ladder</m>.<br />
-          Win <m style="color: #9c8809" ;>Prices.</m> Get
+          Win <m style="color: #9c8809" ;>Prizes.</m> Get
           <m style="color: #9c8809">Addicted</m>.
         </h1>
       </div>
