@@ -96,7 +96,7 @@ $my_position = $row['rank'] + 1;
       const imageURL = URL.createObjectURL(file);
 
       const previewDiv = document.getElementById("login_icon");
-      previewDiv.style.backgroundImage = `url('${imageURL})')`;
+      previewDiv.style.backgroundImage = `url('${imageURL}')`;
     })
 
     </script>
