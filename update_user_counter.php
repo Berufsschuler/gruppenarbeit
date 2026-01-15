@@ -9,9 +9,19 @@ if (!isset($_SESSION["user_id"])) {
 $user_id = $_SESSION["user_id"];
 
 /* --- Cookies erhöhen --- */
-$stmt = mysqli_stmt_init($conn);
-mysqli_stmt_prepare($stmt, "UPDATE users SET cookies = cookies + 1 WHERE id = ?");
-mysqli_stmt_bind_param($stmt, "i", $user_id);
+
+$plusAmount = 1;
+
+$eventQuery = "SELECT COUNT(*) AS active FROM events WHERE title = 'Double Cookies Day' AND is_active = 1";
+$result = mysqli_query($conn, $eventQuery);
+$row = mysqli_fetch_assoc($result);
+
+if ($row['active'] > 0) {
+    $plusAmount = 2; // Event aktiv → 2 Cookies pro Klick
+}
+
+$stmt = mysqli_prepare($conn, "UPDATE users SET cookies = cookies + ? WHERE id = ?");
+mysqli_stmt_bind_param($stmt, "ii", $plusAmount, $user_id);
 mysqli_stmt_execute($stmt);
 mysqli_stmt_close($stmt);
 
