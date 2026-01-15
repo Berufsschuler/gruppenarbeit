@@ -8,7 +8,7 @@ if (!isset($_SESSION["user_id"])) {
 }
 
 // DB-Verbindung
-require_once("/database.php");
+require_once("database.php");
 
 // User aus der DB holen
 $user_id = $_SESSION["user_id"];
