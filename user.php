@@ -12,19 +12,25 @@ require_once("database.php");
 
 // User aus der DB holen
 $user_id = $_SESSION["user_id"];
-$stmt = mysqli_prepare($conn, "SELECT username, email, `role` FROM users WHERE id = ?");
+$stmt = mysqli_prepare($conn, "SELECT username, email, `role`, profile_picture FROM users WHERE id = ?");
 mysqli_stmt_bind_param($stmt, "i", $user_id);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 
 if ($row = mysqli_fetch_assoc($result)) {
-    $username = $row['username']; // Username statt full_name
+    $username = $row['username'];
     $role = $row['role'];
+    $profile_picture = $row['profile_picture'];
 } else {
-    // Ungültige Session => Logout erzwingen
     session_destroy();
     header("Location: login.php");
     exit();
+}
+
+$profileImage = "server_img/standard_profile_picture.jpg";
+
+if (!empty($profile_picture) && file_exists("server_img/" . $profile_picture)) {
+    $profileImage = "server_img/" . $profile_picture;
 }
 
 //Cookies anzahl kontrollieren:
@@ -44,9 +50,6 @@ $result = mysqli_stmt_get_result($stmt);
 $row = mysqli_fetch_assoc($result);
 
 $my_position = $row['rank'] + 1;
-
-
-
 ?>
 
 
@@ -84,26 +87,38 @@ $my_position = $row['rank'] + 1;
     </div>
 
     <script>
-    
-    function openExplorer() {
-      document.getElementById("fileInput").click();
-    }
+      function openExplorer() {
+        document.getElementById("fileInput").click();
+      }
 
-    document.getElementById("fileInput").addEventListener("change", function () {
-      const file = this.files[0];
-      if (!file) return;
+      document.getElementById("fileInput").addEventListener("change", function () {
+        const file = this.files[0];
+        if (!file) return;
 
-      const imageURL = URL.createObjectURL(file);
+        const formData = new FormData();
+        formData.append("profile_picture", file);
 
-      const previewDiv = document.getElementById("login_icon");
-      previewDiv.style.backgroundImage = `url('${imageURL}')`;
-    })
-
+        fetch("upload_profile_picture.php", {
+          method: "POST",
+          body: formData
+        })
+        .then(res => res.text())
+        .then(filename => {
+          if (filename) {
+            document.getElementById("login_icon").style.backgroundImage =
+              `url('server_img/${filename}?v=${Date.now()}')`;
+          }
+        });
+      });
     </script>
 
 
     <div class="login_icon_container">
-      <div id="login_icon" onclick="changeNav()"></div>
+      <div
+        id="login_icon"
+        onclick="changeNav()"
+        style="background-image: url('<?= $profileImage ?>');">
+      </div>
     </div>
     
     <script>
@@ -125,7 +140,7 @@ $my_position = $row['rank'] + 1;
   <?php
     // Leaderboard-Daten holen
     $leaderboard = [];
-    $stmt = mysqli_prepare($conn, "SELECT username, cookies FROM users ORDER BY cookies DESC");
+    $stmt = mysqli_prepare($conn, "SELECT username, cookies, profile_picture FROM users ORDER BY cookies DESC");
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
@@ -135,20 +150,43 @@ $my_position = $row['rank'] + 1;
   ?>
 
   <div id="leaderboard">
-    <h2>🍪 Leaderboard 🍪</h2>
-    
-    <div id="leaderboardLadder">
-      <?php foreach($leaderboard as $index => $user): ?>
-        <div class="leaderboard_element">
-          <?= ($index + 1) ?>. <?= htmlspecialchars($user['username']) ?> | <?= $user['cookies'] ?> 🍪
-        </div>
-      <?php endforeach; ?>
-    </div>
+  <h2>🍪 Leaderboard 🍪</h2>
 
-    <div id="leaderboardPosition">
-      <p>Your Position: <?= $my_position ?>.</p>
-    </div>
+  <div id="leaderboardLadder">
+    <?php foreach ($leaderboard as $index => $user): ?>
+
+      <?php
+        $picture = !empty($user['profile_picture']) && file_exists("server_img/" . $user['profile_picture'])
+          ? "server_img/" . htmlspecialchars($user['profile_picture'])
+          : "server_img/standard_profile_picture.jpg";
+      ?>
+
+      <div class="leaderboard_element">
+        <span class="leaderboard_rank">
+          <?= $index + 1 ?>.
+        </span>
+
+        <div
+          class="leaderboard_profile_picture"
+          style="background-image: url('<?= $picture ?>');">
+        </div>
+
+        <span class="leaderboard_name">
+          <?= htmlspecialchars($user['username']) ?>
+        </span>
+
+        <span class="leaderboard_cookies">
+          | <?= $user['cookies'] ?> 🍪
+        </span>
+      </div>
+
+    <?php endforeach; ?>
   </div>
+
+  <div id="leaderboardPosition">
+    <p>Your Position: <?= $my_position ?>.</p>
+  </div>
+</div>
   
 
     <div>

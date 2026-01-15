@@ -62,7 +62,6 @@ header {
 #login_icon {
   border-radius: 500px;
   border: 3px solid black;
-  background-image: url(./img/basic_icon.jpg);
   background-size: cover;
   width: 50px;
   height: 50px;
@@ -133,19 +132,44 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5px;
 }
 
 .leaderboard_element {
   display: flex;
-  justify-content: center;
   align-items: center;
+  gap: 10px;
   width: 90%;
   min-height: 40px;
   background-color: black;
-  margin: 5px 0;
   border: 1px solid darkblue;
   border-radius: 15px;
   color: white;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+.leaderboard_profile_picture {
+  width: 40px;
+  height: 40px;
+  border: 2px dashed black; 
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Platz für Rang, Name und Cookies */
+.leaderboard_rank {
+  width: 30px;
+  text-align: right;
+}
+
+.leaderboard_name {
+  font-weight: bold;
+}
+
+.leaderboard_cookies {
+  margin-left: auto;
 }
 
 #leaderboardPosition {
@@ -153,25 +177,24 @@ header {
   color: white;
 }
 
-
-/* Container scrollbar */
+/* Scrollbar Styling */
 #leaderboardLadder::-webkit-scrollbar {
-  width: 15px; /* width of scrollbar */
+  width: 15px;
 }
 
 #leaderboardLadder::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1); /* track color */
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
 }
 
 #leaderboardLadder::-webkit-scrollbar-thumb {
-  background-color: #9c8809; /* your thumb color */
+  background-color: #9c8809;
   border-radius: 10px;
-  border: 3px solid rgba(0,0,0,0.3); /* optional border for style */
+  border: 3px solid rgba(0,0,0,0.3);
 }
 
 #leaderboardLadder::-webkit-scrollbar-thumb:hover {
-  background-color: purple; /* hover color */
+  background-color: purple;
 }
 
 
