@@ -153,6 +153,9 @@ weil der user bei username das eingegeben hat:  'test', 'x', 'x'); DELETE FROM u
       </div>
       <div id="creators">Made by: Aleksandar Tesinic & Paul Heigl</div>
       <div class="ficon"><div class="fpicture"></div></div>
+
+      <a href="impressum.html" style="color:white">IMPRESSUM</a>
+
     </footer>
 
     <script src="cookiesFallingBackground.js"></script> 

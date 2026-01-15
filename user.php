@@ -131,6 +131,9 @@ $my_position = $row['rank'] + 1;
       <div class="ficon">
         <div class="fpicture"></div>
       </div>
+
+      <a href="impressum.html" style="color:white">IMPRESSUM</a>
+
     </footer>
     <script src="call_update_perClick.js"></script>
 </body>
