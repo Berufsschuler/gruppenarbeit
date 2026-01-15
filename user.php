@@ -80,7 +80,7 @@ $my_position = $row['rank'] + 1;
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"></a>
       <a onclick="openExplorer()">Change Profile Picture</a>
       <a href="logout.php">Logout</a>
-      <input type="file" id="fileInput" style="display:none">
+      <input type="file" id="fileInput" accept=".jpg,.jpeg,.png" style="display:none">
     </div>
 
     <script>
@@ -90,7 +90,7 @@ $my_position = $row['rank'] + 1;
     }
 
     document.getElementById("fileInput").addEventListener("change", function () {
-      const file = this files[0];
+      const file = this.files[0];
       if (!file) return;
 
       const imageURL = URL.createObjectURL(file);
