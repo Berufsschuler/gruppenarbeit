@@ -19,7 +19,7 @@ if (isset($_POST["submitButton"])) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $errors[] = "Email is not valid!";
     }
-    if (strlen($username) < 16) {
+    if (strlen($username) > 16) {
         $errors[] = "Username TOO LONG! Needs to be under 16 characters!";
     }
     if (strlen($password) < 8) {
